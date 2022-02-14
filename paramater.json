@@ -1,0 +1,32 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageaccountname": {
+            "value": "azjan-st-01"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "virtulanetworkname": {
+            "value": "azjan-vnet-01"
+        },
+        "virtualmachinename": {
+            "value": "azjan-vm-01"
+        },
+        "adminusername": {
+            "value": "azureadmin"
+        },
+        "adminpassword": {
+             "adminPassword": {
+                "reference": {
+                  "keyVault": {
+                    "id": "/subscriptions/09fe877a-45bc-4477-b826-0a391cdcf0c1/resourceGroups/ravi/providers/Microsoft.KeyVault/vaults/demokeyvault-123"
+                  },
+                  "secretName": "windowsvmpassword"
+                }
+           }
+        }
+    }
+    
+}

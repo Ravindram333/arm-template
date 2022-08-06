@@ -1,0 +1,11 @@
+pool:
+  name: web-app
+steps:
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: D:\agent\agent5'
+  inputs:
+    SourceFolder: terraform.tfstate
+    TargetFolder: 'D:\agent\agent5'
